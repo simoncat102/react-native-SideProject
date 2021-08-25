@@ -33,46 +33,49 @@ export default function login({ navigation }) {
         <TextInput style={styles.input} placeholder="確認密碼" />
       </View>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TouchableOpacity style={styles.cancelButton}>
-          <Text onPress={() => {
-                navigation.navigate("loginView");
-              }} style={styles.buttonText}> 取消註冊</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("loginView");
+          }}
+          style={styles.cancelButton}
+        >
+          <Text style={styles.buttonText}> 取消註冊</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}> 確認註冊 </Text>
         </TouchableOpacity>
       </View>
-              {/* 橫線 */}
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.hr} />
-        </View>
+      {/* 橫線 */}
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View style={styles.hr} />
+      </View>
 
-        <View>
-          <TouchableOpacity style={styles.facebookButton}>
-            <Icon
-              name="facebook-official"
-              type="font-awesome"
-              color="#f9f9f9"
-              size={20}
-            />
-            <Text style={styles.buttonText}>
-              {"    "}
-              Sign up with Facebook
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.googleButton}>
-            <Icon
-              name="google-plus-square"
-              type="font-awesome"
-              color="#f9f9f9"
-              size={20}
-            />
-            <Text style={styles.buttonText}>
-              {"    "}
-              Sign up with Google
-            </Text>
-          </TouchableOpacity>
-        </View>
+      <View>
+        <TouchableOpacity style={styles.facebookButton}>
+          <Icon
+            name="facebook-official"
+            type="font-awesome"
+            color="#f9f9f9"
+            size={20}
+          />
+          <Text style={styles.buttonText}>
+            {"    "}
+            Sign up with Facebook
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.googleButton}>
+          <Icon
+            name="google-plus-square"
+            type="font-awesome"
+            color="#f9f9f9"
+            size={20}
+          />
+          <Text style={styles.buttonText}>
+            {"    "}
+            Sign up with Google
+          </Text>
+        </TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
     </>
   );
