@@ -13,6 +13,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 
 export default function ({ navigation }) {
+  // 加了{navigation才可以用}
   const { isDarkmode, setTheme } = useTheme();
   return (
     <Layout>

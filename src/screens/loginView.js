@@ -1,16 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
-  StyleSheet,
   Text,
   View,
   Image,
   TouchableOpacity,
   TextInput,
+  StyleSheet,
 } from "react-native";
 import { Icon } from "react-native-elements";
+import { Button } from "react-native-elements/dist/buttons/Button";
 
-export default function login() {
+// import { styles } from "../style/loginStyle";
+
+export default function login({ navigation }) {
+  // 加了{navigation才可以用}
   return (
     <>
       {/* 透過這個"<>"可以在同一頁有多個view */}
@@ -22,12 +26,16 @@ export default function login() {
           ></Image>
         </View>
         <View>
-    
           <TextInput style={styles.input} placeholder="email address" />
           <TextInput style={styles.input} placeholder="password" />
 
           {/* 有背景的button */}
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("homeView");
+            }}
+            style={styles.button}
+          >
             <Text style={styles.buttonText}> Sign In </Text>
           </TouchableOpacity>
         </View>
@@ -36,7 +44,15 @@ export default function login() {
         <View style={{ flexDirection: "row" }}>
           <Text style={styles.textFamily}>first time here?</Text>
           <TouchableOpacity style={styles.signButton}>
-            <Text style={styles.ButtonText}> Sign Up </Text>
+            <Text
+              onPress={() => {
+                navigation.navigate("signUpView");
+              }}
+              style={styles.ButtonText}
+            >
+              {" "}
+              Sign Up{" "}
+            </Text>
           </TouchableOpacity>
         </View>
         {/* 橫線 */}
@@ -75,8 +91,6 @@ export default function login() {
     </>
   );
 }
-
-// sytle放這邊
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
