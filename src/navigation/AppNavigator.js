@@ -7,6 +7,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import loginView from "../screens/loginView";
 import signUpView from "../screens/signUpView";
 import homeView from '../screens/HomeView'
+import agendaView from '../screens/agendaView'
 
 const MainStack = createStackNavigator();
 
@@ -20,6 +21,7 @@ const Main = () => {
       <MainStack.Screen name="loginView" component={loginView} />
       <MainStack.Screen name="homeView" component={homeView} />
       <MainStack.Screen name="signUpView" component={signUpView} />
+      <MainStack.Screen name="agendaView" component={agendaView} />
       
 
     </MainStack.Navigator>
