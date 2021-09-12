@@ -28,13 +28,13 @@ export default function login({ navigation }) {
                 <TextInput style={styles.input} placeholder="健身計畫名稱" />
         </View>
 
-        <View >
+        <View style={{marginTop: 50}}>
         {/* 有背景的button */}
             <TouchableOpacity onPress={() => {navigation.navigate("homeView");}} style={styles.button}>
-                <Text style={styles.buttonText}> Sign In </Text>
+                <Text style={styles.buttonText}> 下一步驟 </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("homeView");}} style={styles.button}>
-                <Text style={styles.buttonText}> Sign In </Text>
+            <TouchableOpacity onPress={() => {navigation.navigate("homeView");}} style={styles.button2}>
+                <Text style={styles.buttonText}> 上一步驟 </Text>
             </TouchableOpacity>
         </View>
 
@@ -51,7 +51,17 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
   button: {
-    alignSelf: "flex-start",
+    alignSelf: "center",
+    margin: 10,
+    padding: 10,
+    paddingLeft: 45,
+    paddingRight: 45,
+    backgroundColor: "#f9f9f9",
+    borderWidth: 1, 
+    borderColor: "#2b2b2b"
+  },
+  button2: {
+    alignSelf: "center",
     margin: 10,
     padding: 10,
     paddingLeft: 45,

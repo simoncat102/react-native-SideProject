@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { Icon } from "react-native-elements";
 import { Button } from "react-native-elements/dist/buttons/Button";
-import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 
 // import { styles } from "../style/loginStyle";
 

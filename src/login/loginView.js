@@ -34,7 +34,7 @@ export default function login({ navigation }) {
               size={20}
             />
             <TextInput
-              keyboardType="email-address"
+              //keyboardType="email-address"
               style={styles.input}
               placeholder="email address"
             />
@@ -48,7 +48,7 @@ export default function login({ navigation }) {
               size={20}
             />
             <TextInput
-              keyboardType="password"
+              //keyboardType="password"
               style={styles.input}
               placeholder="password"
             />
