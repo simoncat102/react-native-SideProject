@@ -21,13 +21,39 @@ export default function login({ navigation }) {
       <View style={styles.container} name="login">
         <View style={{}}>
           <Image
-            source={require("/Users/louischang/Documents/SideProject/react-native-SideProject/assets/favicon.png")}
+            source={require("../../assets/images/favicon.png")}
             style={styles.logo}
           ></Image>
         </View>
         <View>
-          <TextInput keyboardType="email-address" style={styles.input} placeholder="email address" />
-          <TextInput secureTextEntry={true} style={styles.input} placeholder="password" />
+          <View style={styles.rowView}>
+            <Icon
+              name="mail"
+              type="feather"
+              color="#2b2b2b"
+              size={20}
+            />
+            <TextInput
+              keyboardType="email-address"
+              style={styles.input}
+              placeholder="email address"
+            />
+          </View>
+
+          <View style={styles.rowView}>
+            <Icon
+              name="lock"
+              type="feather"
+              color="#2b2b2b"
+              size={20}
+            />
+            <TextInput
+              keyboardType="password"
+              style={styles.input}
+              placeholder="password"
+            />
+          </View>
+
 
           {/* 有背景的button */}
           <TouchableOpacity
@@ -162,12 +188,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   input: {
-    alignSelf: "stretch",
+    // alignSelf: "stretch",
     height: 40,
+    width:270,
     margin: 15,
-    borderWidth: 1,
     padding: 10,
     borderColor: "#2b2b2b",
+    borderBottomWidth: 1,
   },
   hr: {
     width: 100,
@@ -187,5 +214,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
+  },
+  rowView: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf:"stretch"
   },
 });
