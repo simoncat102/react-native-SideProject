@@ -49,9 +49,9 @@ export default function login({ navigation }) {
           <Icon name="heart-o" type="font-awesome" color="#2b2b2b" size={20} />
           <Text style={styles.subtitleFont}>{"   "}您個人的健身計畫</Text>
           <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("programNameView");
-            }}
+                onPress={() => {
+                  navigation.navigate("programNameView");
+                }}
             style={styles.addButton}
           >
             <Text style={styles.buttonText}> 建立計畫</Text>
@@ -114,8 +114,8 @@ export default function login({ navigation }) {
               marginLeft={40}
             />
             <Icon
-              name="sliders"
-              type="font-awesome"
+              name="more-horizontal"
+              type="feather"
               color="#2b2b2b"
               size={20}
               marginLeft={20}
@@ -163,8 +163,8 @@ export default function login({ navigation }) {
               marginLeft={40}
             />
             <Icon
-              name="sliders"
-              type="font-awesome"
+              name="more-horizontal"
+              type="feather"
               color="#2b2b2b"
               size={20}
               marginLeft={20}
