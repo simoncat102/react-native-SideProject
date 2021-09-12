@@ -49,9 +49,9 @@ export default function login({ navigation }) {
           <Icon name="heart-o" type="font-awesome" color="#2b2b2b" size={20} />
           <Text style={styles.subtitleFont}>{"   "}您個人的健身計畫</Text>
           <TouchableOpacity
-            //   onPress={() => {
-            //     navigation.navigate("loginView");
-            //   }}
+            onPress={() => {
+              navigation.navigate("programNameView");
+            }}
             style={styles.addButton}
           >
             <Text style={styles.buttonText}> 建立計畫</Text>
