@@ -7,6 +7,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  SafeAreaView,
+  ScrollView,
 } from "react-native";
 import { Icon } from "react-native-elements";
 import { Button } from "react-native-elements/dist/buttons/Button";
@@ -16,184 +18,213 @@ import { Button } from "react-native-elements/dist/buttons/Button";
 export default function login({ navigation }) {
   // 加了{navigation才可以用}
   return (
-    <>
-      {/* 透過這個"<>"可以在同一頁有多個view */}
-      <View
-        style={(styles.container, { paddingTop: 50, padding: 30 })}
-        name="homepage"
-      >
-        <View style={{ flexDirection: "row" }}>
-          <Icon
-            onPress={() => {
-              navigation.navigate("loginView");
-            }}
-            name="bars"
-            type="font-awesome"
-            color="#2b2b2b"
-            size={20}
-          />
-        </View>
-        <View>
-          <Text style={styles.headerFont}>歡迎回來，張弘毅</Text>
-          <Text style={styles.titleFont}>今日健身計畫：核心訓練</Text>
-        </View>
+    <SafeAreaView>
+      <ScrollView>
+        <>
+          {/* 透過這個"<>"可以在同一頁有多個view */}
+          <View
+            style={(styles.container, { paddingTop: 50, padding: 30 })}
+            name="homepage"
+          >
+            <View style={{ flexDirection: "row" }}>
+              <Icon
+                onPress={() => {
+                  navigation.navigate("loginView");
+                }}
+                name="bars"
+                type="font-awesome"
+                color="#2b2b2b"
+                size={20}
+              />
+            </View>
+            <View>
+              <Text style={styles.headerFont}>歡迎回來，張弘毅</Text>
+              <Text style={styles.titleFont}>今日健身計畫：核心訓練</Text>
+            </View>
 
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.hr} />
-        </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.hr} />
+            </View>
 
-        {/* 健身計畫 */}
-        <View style={{ flexDirection: "row" }}>
-          <Icon name="heart-o" type="font-awesome" color="#2b2b2b" size={20} />
-          <Text style={styles.subtitleFont}>{"   "}您個人的健身計畫</Text>
-          <TouchableOpacity
+            {/* 健身計畫 */}
+            <View style={{ flexDirection: "row", alignItems: "stretch" }}>
+              <Icon
+                name="heart-o"
+                type="font-awesome"
+                color="#2b2b2b"
+                size={20}
+                marginTop={6}
+              />
+              <Text style={styles.subtitleFont}>{"   "}您個人的健身計畫</Text>
+              <TouchableOpacity
                 onPress={() => {
                   navigation.navigate("programNameView");
                 }}
-            style={styles.addButton}
-          >
-            <Text style={styles.buttonText}> 建立計畫</Text>
-          </TouchableOpacity>
-        </View>
-        {/* Image area Note!! -> still need to add scroll function */}
-        <View style={{ flexDirection: "row" }}>
-          <Image
-            source={require("../assets/images/coreTran.jpeg")}
-            style={styles.planImage}
-          />
-          <Image
-            source={require("../assets/images/coreTran.jpeg")}
-            style={styles.planImage}
-          />
-          <Image
-            source={require("../assets/images/coreTran.jpeg")}
-            style={styles.planImage}
-          />
-        </View>
+                style={styles.addButton}
+              >
+                <Text style={styles.buttonText}> 建立計畫</Text>
+              </TouchableOpacity>
+            </View>
+            {/* Image area Note!! -> still need to add scroll function */}
+            <View style={{ flexDirection: "row" }}>
+              <Image
+                source={require("../assets/images/coreTran.jpeg")}
+                style={styles.planImage}
+              />
+              <Image
+                source={require("../assets/images/coreTran.jpeg")}
+                style={styles.planImage}
+              />
+              <Image
+                source={require("../assets/images/coreTran.jpeg")}
+                style={styles.planImage}
+              />
+            </View>
 
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.hr} />
-        </View>
-        {/* 橫線 */}
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.hrLarge} />
+            </View>
+            {/* 橫線 */}
 
-        {/* 健身規劃 */}
-        <View style={{ flexDirection: "row", alignSelf: "center" }}>
-          <Icon name="calendar" type="font-awesome" color="#2b2b2b" size={20} />
-          <Text style={styles.subtitleFont}>{"   "}您個人的健身規劃</Text>
-          <TouchableOpacity
-            //   onPress={() => {
-            //     navigation.navigate("loginView");
-            //   }}
-            style={styles.addButton}
-          >
-            <Text style={styles.buttonText}> 新增規劃</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.weekContainer}>
-            <Text style={styles.weekFont}>mon</Text>
-            <Text style={styles.dateFont}>02</Text>
-          </View>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={styles.tranningName}>核心訓練</Text>
-          </View>
-          <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
-            <Text style={styles.tranningTime}>30</Text>
-            <Text style={styles.tranningUnit}>mins</Text>
-          </View>
+            {/* 健身規劃 */}
+            <View style={{ flexDirection: "row", alignItems: "flex-start" }}>
+              <Icon
+                name="calendar"
+                type="font-awesome"
+                color="#2b2b2b"
+                size={20}
+                marginTop={6}
+              />
+              <Text style={styles.subtitleFont}>{"   "}您個人的健身規劃</Text>
+              <TouchableOpacity
+                //   onPress={() => {
+                //     navigation.navigate("loginView");
+                //   }}
+                style={styles.addButton}
+              >
+                <Text style={styles.buttonText}> 新增規劃</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.weekContainer}>
+                <Text style={styles.weekFont}>mon</Text>
+                <Text style={styles.dateFont}>02</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.tranningName}>核心訓練</Text>
+              </View>
+              <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
+                <Text style={styles.tranningTime}>30</Text>
+                <Text style={styles.tranningUnit}>mins</Text>
+              </View>
 
-          <View style={{ flexDirection: "row" }}>
-            <Icon
-              name="check"
-              type="evilicon"
-              color="#2F942F"
-              size={30}
-              marginLeft={40}
-            />
-            <Icon
-              name="more-horizontal"
-              type="feather"
-              color="#2b2b2b"
-              size={20}
-              marginLeft={20}
-            />
-          </View>
-        </View>
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.hr} />
-        </View>
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.weekContainer}>
-            <Text style={styles.weekFont}>tue</Text>
-            <Text style={styles.dateFont}>03</Text>
-          </View>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={styles.restName}>休息日</Text>
-          </View>
-        </View>
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.hr} />
-        </View>
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.weekContainer}>
-            <Text style={styles.weekFont}>wed</Text>
-            <Text style={styles.dateFont}>04</Text>
-          </View>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={styles.tranningName}>三頭肌群</Text>
-          </View>
-          <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
-            <Text style={styles.tranningTime}>45</Text>
-            <Text style={styles.tranningUnit}>mins</Text>
-          </View>
+              <View style={{ flexDirection: "row" }}>
+                <Icon
+                  name="check"
+                  type="evilicon"
+                  color="#2F942F"
+                  size={30}
+                  marginLeft={40}
+                />
+                <Icon
+                  name="more-horizontal"
+                  type="feather"
+                  color="#2b2b2b"
+                  size={20}
+                  marginLeft={20}
+                />
+              </View>
+            </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.hr} />
+            </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.weekContainer}>
+                <Text style={styles.weekFont}>tue</Text>
+                <Text style={styles.dateFont}>03</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.restName}>休息日</Text>
+              </View>
+            </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.hr} />
+            </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.weekContainer}>
+                <Text style={styles.weekFont}>wed</Text>
+                <Text style={styles.dateFont}>04</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.tranningName}>三頭肌群</Text>
+              </View>
+              <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
+                <Text style={styles.tranningTime}>45</Text>
+                <Text style={styles.tranningUnit}>mins</Text>
+              </View>
 
-          <View style={{ flexDirection: "row" }}>
-            <Icon
-              name="check"
-              type="evilicon"
-              color="#2F942F"
-              size={30}
-              marginLeft={40}
-            />
-            <Icon
-              name="more-horizontal"
-              type="feather"
-              color="#2b2b2b"
-              size={20}
-              marginLeft={20}
-            />
+              <View style={{ flexDirection: "row" }}>
+                <Icon
+                  name="check"
+                  type="evilicon"
+                  color="#2F942F"
+                  size={30}
+                  marginLeft={40}
+                />
+                <Icon
+                  name="more-horizontal"
+                  type="feather"
+                  color="#2b2b2b"
+                  size={20}
+                  marginLeft={20}
+                />
+              </View>
+            </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.hr} />
+            </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.weekContainer}>
+                <Text style={styles.weekFont}>thu</Text>
+                <Text style={styles.dateFont}>05</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.restName}>休息日</Text>
+              </View>
+            </View>
+            {/* 橫線 */}
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.hr} />
+            </View>
+            {/* 橫線 */}
+
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View style={styles.weekContainer}>
+                <Text style={styles.weekFont}>fri</Text>
+                <Text style={styles.dateFont}>06</Text>
+              </View>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={styles.restName}>休息日</Text>
+              </View>
+            </View>
           </View>
-        </View>
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.hr} />
-        </View>
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.weekContainer}>
-            <Text style={styles.weekFont}>thu</Text>
-            <Text style={styles.dateFont}>05</Text>
-          </View>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={styles.restName}>休息日</Text>
-          </View>
-        </View>
-        {/* 橫線 */}
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={styles.hr} />
-        </View>
-        {/* 橫線 */}
-      </View>
-    </>
+        </>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
+  scrollView: {
+    marginHorizontal: 20,
+  },
   container: {
     // flex: 1,
     backgroundColor: "#f9f9f9",
@@ -219,7 +250,7 @@ const styles = StyleSheet.create({
     fontFamily: "Verdana",
     fontWeight: "bold",
     fontSize: 16,
-    justifyContent: "flex-start",
+    marginTop:5,
   },
   titleFont: {
     marginTop: 10,
@@ -239,7 +270,6 @@ const styles = StyleSheet.create({
   button: {
     alignSelf: "flex-start",
     margin: 20,
-    marginTop: 20,
     padding: 10,
     paddingLeft: 45,
     paddingRight: 45,
@@ -252,6 +282,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     backgroundColor: "#2b2b2b",
+    marginBottom: 15,
   },
   buttonText: {
     flexDirection: "row",
@@ -268,6 +299,14 @@ const styles = StyleSheet.create({
     height: 1.5,
     backgroundColor: "#b9b9b9",
     marginTop: 10,
+    marginBottom: 10,
+  },
+  hrLarge: {
+    width: 100,
+    flex: 1,
+    height: 1.5,
+    backgroundColor: "#b9b9b9",
+    marginTop: 30,
     marginBottom: 10,
   },
   planImage: {
