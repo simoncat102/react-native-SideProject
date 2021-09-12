@@ -59,17 +59,17 @@ export default function login({ navigation }) {
         {/* Image area Note!! -> still need to add scroll function */}
         <View style={{ flexDirection: "row" }}>
           <Image
-            source={require("../../assets/images/coreTran.jpeg")}
+            source={require("../assets/images/coreTran.jpeg")}
             style={styles.planImage}
-          ></Image>
+          />
           <Image
-            source={require("../../assets/images/coreTran.jpeg")}
+            source={require("../assets/images/coreTran.jpeg")}
             style={styles.planImage}
-          ></Image>
+          />
           <Image
-            source={require("../../assets/images/coreTran.jpeg")}
+            source={require("../assets/images/coreTran.jpeg")}
             style={styles.planImage}
-          ></Image>
+          />
         </View>
         {/* 橫線 */}
         <View style={{ flexDirection: "row", alignItems: "center" }}>

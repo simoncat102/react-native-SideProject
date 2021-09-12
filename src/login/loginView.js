@@ -21,13 +21,13 @@ export default function login({ navigation }) {
       <View style={styles.container} name="login">
         <View style={{}}>
           <Image
-            source={require("/Users/mac/本機檔案/react-native-SideProject/assets/images/favicon.png")}
+            source={require("/Users/louischang/Documents/SideProject/react-native-SideProject/assets/favicon.png")}
             style={styles.logo}
           ></Image>
         </View>
         <View>
-          <TextInput style={styles.input} placeholder="email address" />
-          <TextInput style={styles.input} placeholder="password" />
+          <TextInput keyboardType="email-address" style={styles.input} placeholder="email address" />
+          <TextInput secureTextEntry={true} style={styles.input} placeholder="password" />
 
           {/* 有背景的button */}
           <TouchableOpacity

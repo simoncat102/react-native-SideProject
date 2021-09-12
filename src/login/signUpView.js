@@ -28,9 +28,9 @@ export default function login({ navigation }) {
       </View>
       <View style={styles.container}>
         <TextInput style={styles.input} placeholder="姓名" />
-        <TextInput style={styles.input} placeholder="電子信箱" />
-        <TextInput style={styles.input} placeholder="密碼" />
-        <TextInput style={styles.input} placeholder="確認密碼" />
+        <TextInput style={styles.input} keyboardType="email-address" placeholder="電子信箱" />
+        <TextInput secureTextEntry={true} style={styles.input} placeholder="密碼" />
+        <TextInput secureTextEntry={true} style={styles.input} placeholder="確認密碼" />
       </View>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <TouchableOpacity
